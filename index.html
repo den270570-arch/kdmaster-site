@@ -79,12 +79,33 @@
         <label>Какие работы вас интересуют?<select name="service"><option>Комплексный ремонт квартиры</option><option>Чистовая отделка</option><option>Штукатурка и шпаклёвка</option><option>Электромонтажные работы</option><option>Ремонт санузла</option><option>Ремонт под ключ</option><option>Другое</option></select></label>
         <label>Коротко о задаче<textarea name="message" rows="3" placeholder="Например: квартира 60 м², новостройка..."></textarea></label>
         <button class="button button-accent" type="submit">Подготовить заявку <span>↗</span></button>
-        <p class="form-note" id="form-note">После настройки номера мессенджера заявки будут отправляться прямо вам.</p>
+        <p class="form-note" id="form-note">Заявка будет сохранена, и мы свяжемся с вами по указанному телефону.</p>
       </form>
     </section>
   </main>
 
   <footer class="footer" id="contacts"><div class="footer-top"><a class="brand brand-footer" href="#top" aria-label="KDMaster — на главную"><img class="brand-logo" src="assets/kdmaster-logo.png" alt="Логотип KDMaster"></a><p>KDMaster<br>Ремонт квартир · Калининград</p><a class="footer-up" href="#top">НАВЕРХ ↑</a></div><div class="footer-bottom"><span>© <span id="year"></span> KDMaster · Ремонт квартир · Калининград</span><span>Контакты добавим перед публикацией</span></div></footer>
+  <section class="auth-panel" id="auth-panel" hidden aria-live="polite">
+    <div class="auth-card">
+      <button class="auth-close" id="auth-close" type="button" aria-label="Закрыть">×</button>
+      <p class="eyebrow dark"><span></span> ЛИЧНЫЙ КАБИНЕТ KDMASTER</p>
+      <h2 id="auth-title">Настройка доступа</h2>
+      <p id="auth-description">Введите новый пароль для своей учётной записи.</p>
+      <form id="auth-password-form">
+        <label>Новый пароль<input id="auth-password" type="password" minlength="8" autocomplete="new-password" required placeholder="Не менее 8 символов"></label>
+        <label>Повторите пароль<input id="auth-password-confirm" type="password" minlength="8" autocomplete="new-password" required placeholder="Повторите пароль"></label>
+        <button class="button button-accent" type="submit">Сохранить пароль</button>
+        <p class="auth-message" id="auth-message" role="status"></p>
+      </form>
+      <form id="auth-login-form" hidden>
+        <label>Email<input id="auth-email" type="email" autocomplete="username" required placeholder="Ваш email"></label>
+        <label>Пароль<input id="auth-login-password" type="password" autocomplete="current-password" required placeholder="Пароль"></label>
+        <button class="button button-accent" type="submit">Войти</button>
+        <p class="auth-message" id="login-message" role="status"></p>
+      </form>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
 </html>
